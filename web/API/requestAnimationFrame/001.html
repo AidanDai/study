@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>learn requestAnimationFrame</title>
+</head>
+<body>
+	<canvas id="canvas" width="512" height="512"></canvas>
+	<script type="text/javascript" src="./animation.js"></script>
+	<script type="text/javascript">
+		var canvas = document.querySelector("#canvas"),
+			context = canvas.getContext("2d");
+
+		function randomRgb(){
+			const num = () => Math.random() * 256 | 0;
+			var	arrayRgb = [num(), num(), num()];
+
+			return 'rgb(' + arrayRgb.join() + ')';
+		}
+
+		function draw(){
+			var time = new Date().getTime() * 0.002,
+				x = Math.sin(time) * 192 + 256,
+				y = Math.cos(time * 0.9) * 192 + 256;
+				
+				context.fillStyle = randomRgb();// 设置用于填充的颜色
+				context.beginPath(); // 起始一条路径，或重置当前路径
+				// (x, y) 圆心中点坐标、半径、起始脚弧度、结束教弧度、顺时针或逆时针绘制
+				context.arc(x, y, 10, 0, Math.PI * 2, true); 
+				context.closePath();
+				context.fill();
+		}
+
+		function paint(){
+			draw();
+			window.requestAnimationFrame(paint);
+		}
+		paint();
+	</script>
+</body>
+</html>

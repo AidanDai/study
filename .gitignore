@@ -1,4 +1,4 @@
 index.html
 index.js
-./node/node_modules/*
-./javascript/node_modules/*
+node/node_modules/*
+javascript/node_modules/*
