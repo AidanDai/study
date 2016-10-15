@@ -1,0 +1,1 @@
+# URL: http://www.infoq.com/cn/es6-in-depth/
