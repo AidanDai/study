@@ -1,0 +1,615 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/aidan/.nvm/versions/node/v6.9.2/bin/node',
+1 verbose cli   '/home/aidan/.nvm/versions/node/v6.9.2/bin/npm',
+1 verbose cli   'link' ]
+2 info using npm@4.1.1
+3 info using node@v6.9.2
+4 verbose linkPkg /home/aidan/coding/study/web/webpack-analyse
+5 silly gentlyRm /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules/webpack-analyse is being purged
+6 verbose gentlyRm don't care about contents; nuking /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules/webpack-analyse
+7 silly vacuum-fs purging /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules/webpack-analyse
+8 silly vacuum-fs quitting because other entries in /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules
+9 verbose link build target /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules/webpack-analyse
+10 silly loadCurrentTree Starting
+11 silly install loadCurrentTree
+12 silly install readLocalPackageData
+13 silly install normalizeTree
+14 silly loadCurrentTree Finishing
+15 silly loadIdealTree Starting
+16 silly install loadIdealTree
+17 silly cloneCurrentTree Starting
+18 silly install cloneCurrentTreeToIdealTree
+19 silly cloneCurrentTree Finishing
+20 silly loadShrinkwrap Starting
+21 silly install loadShrinkwrap
+22 silly loadShrinkwrap Finishing
+23 silly loadAllDepsIntoIdealTree Starting
+24 silly install loadAllDepsIntoIdealTree
+25 silly fetchNamedPackageData fsevents
+26 silly mapToRegistry name fsevents
+27 silly mapToRegistry using default registry
+28 silly mapToRegistry registry https://registry.npmjs.org/
+29 silly mapToRegistry data Result {
+29 silly mapToRegistry   raw: 'fsevents',
+29 silly mapToRegistry   scope: null,
+29 silly mapToRegistry   escapedName: 'fsevents',
+29 silly mapToRegistry   name: 'fsevents',
+29 silly mapToRegistry   rawSpec: '',
+29 silly mapToRegistry   spec: 'latest',
+29 silly mapToRegistry   type: 'tag' }
+30 silly mapToRegistry uri https://registry.npmjs.org/fsevents
+31 verbose request uri https://registry.npmjs.org/fsevents
+32 verbose request no auth needed
+33 info attempt registry request try #1 at 16:58:24
+34 verbose request id 26533f275ec960f2
+35 verbose etag W/"5896f7ec-c263"
+36 verbose lastModified Sun, 05 Feb 2017 10:01:16 GMT
+37 http request GET https://registry.npmjs.org/fsevents
+38 http 304 https://registry.npmjs.org/fsevents
+39 verbose headers { date: 'Mon, 06 Feb 2017 08:58:26 GMT',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   'cache-control': 'max-age=300',
+39 verbose headers   etag: 'W/"5896f7ec-c263"',
+39 verbose headers   age: '0',
+39 verbose headers   connection: 'keep-alive',
+39 verbose headers   'x-served-by': 'cache-nrt6131-NRT',
+39 verbose headers   'x-cache': 'HIT',
+39 verbose headers   'x-cache-hits': '1',
+39 verbose headers   'x-timer': 'S1486371506.576076,VS0,VE129',
+39 verbose headers   vary: 'Accept-Encoding' }
+40 silly get cb [ 304,
+40 silly get   { date: 'Mon, 06 Feb 2017 08:58:26 GMT',
+40 silly get     via: '1.1 varnish',
+40 silly get     'cache-control': 'max-age=300',
+40 silly get     etag: 'W/"5896f7ec-c263"',
+40 silly get     age: '0',
+40 silly get     connection: 'keep-alive',
+40 silly get     'x-served-by': 'cache-nrt6131-NRT',
+40 silly get     'x-cache': 'HIT',
+40 silly get     'x-cache-hits': '1',
+40 silly get     'x-timer': 'S1486371506.576076,VS0,VE129',
+40 silly get     vary: 'Accept-Encoding' } ]
+41 verbose etag https://registry.npmjs.org/fsevents from cache
+42 verbose get saving fsevents to /home/aidan/.npm/registry.npmjs.org/fsevents/.cache.json
+43 verbose correctMkdir /home/aidan/.npm correctMkdir not in flight; initializing
+44 silly pickManifestFromRegistryMetadata spec >=1.0.0 <2.0.0 tag latest versions [ '0.1.1',
+44 silly pickManifestFromRegistryMetadata   '0.1.3',
+44 silly pickManifestFromRegistryMetadata   '0.1.4',
+44 silly pickManifestFromRegistryMetadata   '0.1.5',
+44 silly pickManifestFromRegistryMetadata   '0.1.6',
+44 silly pickManifestFromRegistryMetadata   '0.2.0',
+44 silly pickManifestFromRegistryMetadata   '0.3.0',
+44 silly pickManifestFromRegistryMetadata   '0.3.1',
+44 silly pickManifestFromRegistryMetadata   '0.3.2',
+44 silly pickManifestFromRegistryMetadata   '0.3.3',
+44 silly pickManifestFromRegistryMetadata   '0.3.4',
+44 silly pickManifestFromRegistryMetadata   '0.3.5',
+44 silly pickManifestFromRegistryMetadata   '0.3.6',
+44 silly pickManifestFromRegistryMetadata   '0.3.7',
+44 silly pickManifestFromRegistryMetadata   '0.3.8',
+44 silly pickManifestFromRegistryMetadata   '1.0.0',
+44 silly pickManifestFromRegistryMetadata   '1.0.1',
+44 silly pickManifestFromRegistryMetadata   '1.0.2',
+44 silly pickManifestFromRegistryMetadata   '1.0.3',
+44 silly pickManifestFromRegistryMetadata   '1.0.4',
+44 silly pickManifestFromRegistryMetadata   '1.0.5',
+44 silly pickManifestFromRegistryMetadata   '1.0.6',
+44 silly pickManifestFromRegistryMetadata   '1.0.7',
+44 silly pickManifestFromRegistryMetadata   '1.0.8',
+44 silly pickManifestFromRegistryMetadata   '1.0.9',
+44 silly pickManifestFromRegistryMetadata   '1.0.10',
+44 silly pickManifestFromRegistryMetadata   '1.0.11',
+44 silly pickManifestFromRegistryMetadata   '1.0.12',
+44 silly pickManifestFromRegistryMetadata   '1.0.14',
+44 silly pickManifestFromRegistryMetadata   '1.0.15',
+44 silly pickManifestFromRegistryMetadata   '1.0.17' ]
+45 silly resolveWithNewModule fsevents@1.0.17 checking installable status
+46 silly loadAllDepsIntoIdealTree Finishing
+47 silly loadIdealTree Finishing
+48 silly currentTree webpack-analyse@1.0.0
+48 silly currentTree ├── acorn-dynamic-import@2.0.1
+48 silly currentTree ├── acorn@4.0.8
+48 silly currentTree ├── ajv-keywords@1.5.1
+48 silly currentTree ├── ajv@4.11.2
+48 silly currentTree ├── align-text@0.1.4
+48 silly currentTree ├── ansi-regex@2.1.1
+48 silly currentTree ├── anymatch@1.3.0
+48 silly currentTree ├── arr-diff@2.0.0
+48 silly currentTree ├── arr-flatten@1.0.1
+48 silly currentTree ├── array-unique@0.2.1
+48 silly currentTree ├── arrify@1.0.1
+48 silly currentTree ├── asn1.js@4.9.1
+48 silly currentTree ├── assert@1.4.1
+48 silly currentTree ├── async-each@1.0.1
+48 silly currentTree ├── async@2.1.4
+48 silly currentTree ├── balanced-match@0.4.2
+48 silly currentTree ├── base64-js@1.2.0
+48 silly currentTree ├── big.js@3.1.3
+48 silly currentTree ├── binary-extensions@1.8.0
+48 silly currentTree ├── bn.js@4.11.6
+48 silly currentTree ├── brace-expansion@1.1.6
+48 silly currentTree ├── braces@1.8.5
+48 silly currentTree ├── brorand@1.0.6
+48 silly currentTree ├── browserify-aes@1.0.6
+48 silly currentTree ├── browserify-cipher@1.0.0
+48 silly currentTree ├── browserify-des@1.0.0
+48 silly currentTree ├── browserify-rsa@4.0.1
+48 silly currentTree ├── browserify-sign@4.0.0
+48 silly currentTree ├── browserify-zlib@0.1.4
+48 silly currentTree ├── buffer-shims@1.0.0
+48 silly currentTree ├── buffer-xor@1.0.3
+48 silly currentTree ├── buffer@4.9.1
+48 silly currentTree ├── builtin-modules@1.1.1
+48 silly currentTree ├── builtin-status-codes@3.0.0
+48 silly currentTree ├── camelcase@1.2.1
+48 silly currentTree ├── center-align@0.1.3
+48 silly currentTree ├── chokidar@1.6.1
+48 silly currentTree ├── cipher-base@1.0.3
+48 silly currentTree ├── cliui@2.1.0
+48 silly currentTree ├── co@4.6.0
+48 silly currentTree ├── code-point-at@1.1.0
+48 silly currentTree ├── concat-map@0.0.1
+48 silly currentTree ├── console-browserify@1.1.0
+48 silly currentTree ├── constants-browserify@1.0.0
+48 silly currentTree ├── core-util-is@1.0.2
+48 silly currentTree ├── create-ecdh@4.0.0
+48 silly currentTree ├── create-hash@1.1.2
+48 silly currentTree ├── create-hmac@1.1.4
+48 silly currentTree ├── crypto-browserify@3.11.0
+48 silly currentTree ├── date-now@0.1.4
+48 silly currentTree ├── decamelize@1.2.0
+48 silly currentTree ├── des.js@1.0.0
+48 silly currentTree ├── diffie-hellman@5.0.2
+48 silly currentTree ├── domain-browser@1.1.7
+48 silly currentTree ├── elliptic@6.3.2
+48 silly currentTree ├── emojis-list@2.1.0
+48 silly currentTree ├── enhanced-resolve@3.1.0
+48 silly currentTree ├── errno@0.1.4
+48 silly currentTree ├── error-ex@1.3.0
+48 silly currentTree ├── events@1.1.1
+48 silly currentTree ├── evp_bytestokey@1.0.0
+48 silly currentTree ├── expand-brackets@0.1.5
+48 silly currentTree ├── expand-range@1.8.2
+48 silly currentTree ├── extglob@0.3.2
+48 silly currentTree ├── filename-regex@2.0.0
+48 silly currentTree ├── fill-range@2.2.3
+48 silly currentTree ├── find-up@1.1.2
+48 silly currentTree ├── for-in@0.1.6
+48 silly currentTree ├── for-own@0.1.4
+48 silly currentTree ├── get-caller-file@1.0.2
+48 silly currentTree ├── glob-base@0.3.0
+48 silly currentTree ├── glob-parent@2.0.0
+48 silly currentTree ├── graceful-fs@4.1.11
+48 silly currentTree ├── has-flag@1.0.0
+48 silly currentTree ├── hash.js@1.0.3
+48 silly currentTree ├── hosted-git-info@2.1.5
+48 silly currentTree ├── https-browserify@0.0.1
+48 silly currentTree ├── ieee754@1.1.8
+48 silly currentTree ├── indexof@0.0.1
+48 silly currentTree ├── inherits@2.0.3
+48 silly currentTree ├── interpret@1.0.1
+48 silly currentTree ├── invert-kv@1.0.0
+48 silly currentTree ├── is-arrayish@0.2.1
+48 silly currentTree ├── is-binary-path@1.0.1
+48 silly currentTree ├── is-buffer@1.1.4
+48 silly currentTree ├── is-builtin-module@1.0.0
+48 silly currentTree ├── is-dotfile@1.0.2
+48 silly currentTree ├── is-equal-shallow@0.1.3
+48 silly currentTree ├── is-extendable@0.1.1
+48 silly currentTree ├── is-extglob@1.0.0
+48 silly currentTree ├── is-fullwidth-code-point@1.0.0
+48 silly currentTree ├── is-glob@2.0.1
+48 silly currentTree ├── is-number@2.1.0
+48 silly currentTree ├── is-posix-bracket@0.1.1
+48 silly currentTree ├── is-primitive@2.0.0
+48 silly currentTree ├── is-utf8@0.2.1
+48 silly currentTree ├── isarray@1.0.0
+48 silly currentTree ├── isobject@2.1.0
+48 silly currentTree ├── json-loader@0.5.4
+48 silly currentTree ├── json-stable-stringify@1.0.1
+48 silly currentTree ├── json5@0.5.1
+48 silly currentTree ├── jsonify@0.0.0
+48 silly currentTree ├── kind-of@3.1.0
+48 silly currentTree ├── lazy-cache@1.0.4
+48 silly currentTree ├── lcid@1.0.0
+48 silly currentTree ├── load-json-file@1.1.0
+48 silly currentTree ├── loader-runner@2.3.0
+48 silly currentTree ├── loader-utils@0.2.16
+48 silly currentTree ├── lodash@4.17.4
+48 silly currentTree ├── longest@1.0.1
+48 silly currentTree ├── memory-fs@0.4.1
+48 silly currentTree ├── micromatch@2.3.11
+48 silly currentTree ├── miller-rabin@4.0.0
+48 silly currentTree ├── minimalistic-assert@1.0.0
+48 silly currentTree ├── minimatch@3.0.3
+48 silly currentTree ├── minimist@0.0.8
+48 silly currentTree ├── mkdirp@0.5.1
+48 silly currentTree ├── node-libs-browser@2.0.0
+48 silly currentTree ├── normalize-package-data@2.3.5
+48 silly currentTree ├── normalize-path@2.0.1
+48 silly currentTree ├── number-is-nan@1.0.1
+48 silly currentTree ├── object-assign@4.1.1
+48 silly currentTree ├── object.omit@2.0.1
+48 silly currentTree ├── os-browserify@0.2.1
+48 silly currentTree ├── os-locale@1.4.0
+48 silly currentTree ├── pako@0.2.9
+48 silly currentTree ├── parse-asn1@5.0.0
+48 silly currentTree ├── parse-glob@3.0.4
+48 silly currentTree ├── parse-json@2.2.0
+48 silly currentTree ├── path-browserify@0.0.0
+48 silly currentTree ├── path-exists@2.1.0
+48 silly currentTree ├── path-is-absolute@1.0.1
+48 silly currentTree ├── path-type@1.1.0
+48 silly currentTree ├── pbkdf2@3.0.9
+48 silly currentTree ├── pify@2.3.0
+48 silly currentTree ├── pinkie-promise@2.0.1
+48 silly currentTree ├── pinkie@2.0.4
+48 silly currentTree ├── preserve@0.2.0
+48 silly currentTree ├── process-nextick-args@1.0.7
+48 silly currentTree ├── process@0.11.9
+48 silly currentTree ├── prr@0.0.0
+48 silly currentTree ├── public-encrypt@4.0.0
+48 silly currentTree ├── punycode@1.4.1
+48 silly currentTree ├── querystring-es3@0.2.1
+48 silly currentTree ├── querystring@0.2.0
+48 silly currentTree ├── randomatic@1.1.6
+48 silly currentTree ├── randombytes@2.0.3
+48 silly currentTree ├── read-pkg-up@1.0.1
+48 silly currentTree ├── read-pkg@1.1.0
+48 silly currentTree ├── readable-stream@2.2.2
+48 silly currentTree ├── readdirp@2.1.0
+48 silly currentTree ├── regex-cache@0.4.3
+48 silly currentTree ├── repeat-element@1.1.2
+48 silly currentTree ├── repeat-string@1.6.1
+48 silly currentTree ├── require-directory@2.1.1
+48 silly currentTree ├── require-main-filename@1.0.1
+48 silly currentTree ├── right-align@0.1.3
+48 silly currentTree ├── ripemd160@1.0.1
+48 silly currentTree ├── semver@5.3.0
+48 silly currentTree ├── set-blocking@2.0.0
+48 silly currentTree ├── set-immediate-shim@1.0.1
+48 silly currentTree ├── setimmediate@1.0.5
+48 silly currentTree ├── sha.js@2.4.8
+48 silly currentTree ├── source-list-map@0.1.8
+48 silly currentTree ├── source-map@0.5.6
+48 silly currentTree ├── spdx-correct@1.0.2
+48 silly currentTree ├── spdx-expression-parse@1.0.4
+48 silly currentTree ├── spdx-license-ids@1.2.2
+48 silly currentTree ├── stream-browserify@2.0.1
+48 silly currentTree ├── stream-http@2.6.3
+48 silly currentTree ├── string_decoder@0.10.31
+48 silly currentTree ├── string-width@1.0.2
+48 silly currentTree ├── strip-ansi@3.0.1
+48 silly currentTree ├── strip-bom@2.0.0
+48 silly currentTree ├── supports-color@3.2.3
+48 silly currentTree ├── tapable@0.2.6
+48 silly currentTree ├── timers-browserify@2.0.2
+48 silly currentTree ├── to-arraybuffer@1.0.1
+48 silly currentTree ├── tty-browserify@0.0.0
+48 silly currentTree ├─┬ uglify-js@2.7.5
+48 silly currentTree │ ├── async@0.2.10
+48 silly currentTree │ └── yargs@3.10.0
+48 silly currentTree ├── uglify-to-browserify@1.0.2
+48 silly currentTree ├─┬ url@0.11.0
+48 silly currentTree │ └── punycode@1.3.2
+48 silly currentTree ├── util-deprecate@1.0.2
+48 silly currentTree ├─┬ util@0.10.3
+48 silly currentTree │ └── inherits@2.0.1
+48 silly currentTree ├── validate-npm-package-license@3.0.1
+48 silly currentTree ├── vm-browserify@0.0.4
+48 silly currentTree ├── watchpack@1.2.0
+48 silly currentTree ├── webpack-sources@0.1.4
+48 silly currentTree ├── webpack@2.2.1
+48 silly currentTree ├── which-module@1.0.0
+48 silly currentTree ├── window-size@0.1.0
+48 silly currentTree ├── wordwrap@0.0.2
+48 silly currentTree ├── wrap-ansi@2.1.0
+48 silly currentTree ├── xtend@4.0.1
+48 silly currentTree ├── y18n@3.2.1
+48 silly currentTree ├─┬ yargs-parser@4.2.1
+48 silly currentTree │ └── camelcase@3.0.0
+48 silly currentTree └─┬ yargs@6.6.0
+48 silly currentTree   ├── camelcase@3.0.0
+48 silly currentTree   └── cliui@3.2.0
+49 silly idealTree webpack-analyse@1.0.0
+49 silly idealTree ├── acorn-dynamic-import@2.0.1
+49 silly idealTree ├── acorn@4.0.8
+49 silly idealTree ├── ajv-keywords@1.5.1
+49 silly idealTree ├── ajv@4.11.2
+49 silly idealTree ├── align-text@0.1.4
+49 silly idealTree ├── ansi-regex@2.1.1
+49 silly idealTree ├── anymatch@1.3.0
+49 silly idealTree ├── arr-diff@2.0.0
+49 silly idealTree ├── arr-flatten@1.0.1
+49 silly idealTree ├── array-unique@0.2.1
+49 silly idealTree ├── arrify@1.0.1
+49 silly idealTree ├── asn1.js@4.9.1
+49 silly idealTree ├── assert@1.4.1
+49 silly idealTree ├── async-each@1.0.1
+49 silly idealTree ├── async@2.1.4
+49 silly idealTree ├── balanced-match@0.4.2
+49 silly idealTree ├── base64-js@1.2.0
+49 silly idealTree ├── big.js@3.1.3
+49 silly idealTree ├── binary-extensions@1.8.0
+49 silly idealTree ├── bn.js@4.11.6
+49 silly idealTree ├── brace-expansion@1.1.6
+49 silly idealTree ├── braces@1.8.5
+49 silly idealTree ├── brorand@1.0.6
+49 silly idealTree ├── browserify-aes@1.0.6
+49 silly idealTree ├── browserify-cipher@1.0.0
+49 silly idealTree ├── browserify-des@1.0.0
+49 silly idealTree ├── browserify-rsa@4.0.1
+49 silly idealTree ├── browserify-sign@4.0.0
+49 silly idealTree ├── browserify-zlib@0.1.4
+49 silly idealTree ├── buffer-shims@1.0.0
+49 silly idealTree ├── buffer-xor@1.0.3
+49 silly idealTree ├── buffer@4.9.1
+49 silly idealTree ├── builtin-modules@1.1.1
+49 silly idealTree ├── builtin-status-codes@3.0.0
+49 silly idealTree ├── camelcase@1.2.1
+49 silly idealTree ├── center-align@0.1.3
+49 silly idealTree ├── chokidar@1.6.1
+49 silly idealTree ├── cipher-base@1.0.3
+49 silly idealTree ├── cliui@2.1.0
+49 silly idealTree ├── co@4.6.0
+49 silly idealTree ├── code-point-at@1.1.0
+49 silly idealTree ├── concat-map@0.0.1
+49 silly idealTree ├── console-browserify@1.1.0
+49 silly idealTree ├── constants-browserify@1.0.0
+49 silly idealTree ├── core-util-is@1.0.2
+49 silly idealTree ├── create-ecdh@4.0.0
+49 silly idealTree ├── create-hash@1.1.2
+49 silly idealTree ├── create-hmac@1.1.4
+49 silly idealTree ├── crypto-browserify@3.11.0
+49 silly idealTree ├── date-now@0.1.4
+49 silly idealTree ├── decamelize@1.2.0
+49 silly idealTree ├── des.js@1.0.0
+49 silly idealTree ├── diffie-hellman@5.0.2
+49 silly idealTree ├── domain-browser@1.1.7
+49 silly idealTree ├── elliptic@6.3.2
+49 silly idealTree ├── emojis-list@2.1.0
+49 silly idealTree ├── enhanced-resolve@3.1.0
+49 silly idealTree ├── errno@0.1.4
+49 silly idealTree ├── error-ex@1.3.0
+49 silly idealTree ├── events@1.1.1
+49 silly idealTree ├── evp_bytestokey@1.0.0
+49 silly idealTree ├── expand-brackets@0.1.5
+49 silly idealTree ├── expand-range@1.8.2
+49 silly idealTree ├── extglob@0.3.2
+49 silly idealTree ├── filename-regex@2.0.0
+49 silly idealTree ├── fill-range@2.2.3
+49 silly idealTree ├── find-up@1.1.2
+49 silly idealTree ├── for-in@0.1.6
+49 silly idealTree ├── for-own@0.1.4
+49 silly idealTree ├── get-caller-file@1.0.2
+49 silly idealTree ├── glob-base@0.3.0
+49 silly idealTree ├── glob-parent@2.0.0
+49 silly idealTree ├── graceful-fs@4.1.11
+49 silly idealTree ├── has-flag@1.0.0
+49 silly idealTree ├── hash.js@1.0.3
+49 silly idealTree ├── hosted-git-info@2.1.5
+49 silly idealTree ├── https-browserify@0.0.1
+49 silly idealTree ├── ieee754@1.1.8
+49 silly idealTree ├── indexof@0.0.1
+49 silly idealTree ├── inherits@2.0.3
+49 silly idealTree ├── interpret@1.0.1
+49 silly idealTree ├── invert-kv@1.0.0
+49 silly idealTree ├── is-arrayish@0.2.1
+49 silly idealTree ├── is-binary-path@1.0.1
+49 silly idealTree ├── is-buffer@1.1.4
+49 silly idealTree ├── is-builtin-module@1.0.0
+49 silly idealTree ├── is-dotfile@1.0.2
+49 silly idealTree ├── is-equal-shallow@0.1.3
+49 silly idealTree ├── is-extendable@0.1.1
+49 silly idealTree ├── is-extglob@1.0.0
+49 silly idealTree ├── is-fullwidth-code-point@1.0.0
+49 silly idealTree ├── is-glob@2.0.1
+49 silly idealTree ├── is-number@2.1.0
+49 silly idealTree ├── is-posix-bracket@0.1.1
+49 silly idealTree ├── is-primitive@2.0.0
+49 silly idealTree ├── is-utf8@0.2.1
+49 silly idealTree ├── isarray@1.0.0
+49 silly idealTree ├── isobject@2.1.0
+49 silly idealTree ├── json-loader@0.5.4
+49 silly idealTree ├── json-stable-stringify@1.0.1
+49 silly idealTree ├── json5@0.5.1
+49 silly idealTree ├── jsonify@0.0.0
+49 silly idealTree ├── kind-of@3.1.0
+49 silly idealTree ├── lazy-cache@1.0.4
+49 silly idealTree ├── lcid@1.0.0
+49 silly idealTree ├── load-json-file@1.1.0
+49 silly idealTree ├── loader-runner@2.3.0
+49 silly idealTree ├── loader-utils@0.2.16
+49 silly idealTree ├── lodash@4.17.4
+49 silly idealTree ├── longest@1.0.1
+49 silly idealTree ├── memory-fs@0.4.1
+49 silly idealTree ├── micromatch@2.3.11
+49 silly idealTree ├── miller-rabin@4.0.0
+49 silly idealTree ├── minimalistic-assert@1.0.0
+49 silly idealTree ├── minimatch@3.0.3
+49 silly idealTree ├── minimist@0.0.8
+49 silly idealTree ├── mkdirp@0.5.1
+49 silly idealTree ├── node-libs-browser@2.0.0
+49 silly idealTree ├── normalize-package-data@2.3.5
+49 silly idealTree ├── normalize-path@2.0.1
+49 silly idealTree ├── number-is-nan@1.0.1
+49 silly idealTree ├── object-assign@4.1.1
+49 silly idealTree ├── object.omit@2.0.1
+49 silly idealTree ├── os-browserify@0.2.1
+49 silly idealTree ├── os-locale@1.4.0
+49 silly idealTree ├── pako@0.2.9
+49 silly idealTree ├── parse-asn1@5.0.0
+49 silly idealTree ├── parse-glob@3.0.4
+49 silly idealTree ├── parse-json@2.2.0
+49 silly idealTree ├── path-browserify@0.0.0
+49 silly idealTree ├── path-exists@2.1.0
+49 silly idealTree ├── path-is-absolute@1.0.1
+49 silly idealTree ├── path-type@1.1.0
+49 silly idealTree ├── pbkdf2@3.0.9
+49 silly idealTree ├── pify@2.3.0
+49 silly idealTree ├── pinkie-promise@2.0.1
+49 silly idealTree ├── pinkie@2.0.4
+49 silly idealTree ├── preserve@0.2.0
+49 silly idealTree ├── process-nextick-args@1.0.7
+49 silly idealTree ├── process@0.11.9
+49 silly idealTree ├── prr@0.0.0
+49 silly idealTree ├── public-encrypt@4.0.0
+49 silly idealTree ├── punycode@1.4.1
+49 silly idealTree ├── querystring-es3@0.2.1
+49 silly idealTree ├── querystring@0.2.0
+49 silly idealTree ├── randomatic@1.1.6
+49 silly idealTree ├── randombytes@2.0.3
+49 silly idealTree ├── read-pkg-up@1.0.1
+49 silly idealTree ├── read-pkg@1.1.0
+49 silly idealTree ├── readable-stream@2.2.2
+49 silly idealTree ├── readdirp@2.1.0
+49 silly idealTree ├── regex-cache@0.4.3
+49 silly idealTree ├── repeat-element@1.1.2
+49 silly idealTree ├── repeat-string@1.6.1
+49 silly idealTree ├── require-directory@2.1.1
+49 silly idealTree ├── require-main-filename@1.0.1
+49 silly idealTree ├── right-align@0.1.3
+49 silly idealTree ├── ripemd160@1.0.1
+49 silly idealTree ├── semver@5.3.0
+49 silly idealTree ├── set-blocking@2.0.0
+49 silly idealTree ├── set-immediate-shim@1.0.1
+49 silly idealTree ├── setimmediate@1.0.5
+49 silly idealTree ├── sha.js@2.4.8
+49 silly idealTree ├── source-list-map@0.1.8
+49 silly idealTree ├── source-map@0.5.6
+49 silly idealTree ├── spdx-correct@1.0.2
+49 silly idealTree ├── spdx-expression-parse@1.0.4
+49 silly idealTree ├── spdx-license-ids@1.2.2
+49 silly idealTree ├── stream-browserify@2.0.1
+49 silly idealTree ├── stream-http@2.6.3
+49 silly idealTree ├── string_decoder@0.10.31
+49 silly idealTree ├── string-width@1.0.2
+49 silly idealTree ├── strip-ansi@3.0.1
+49 silly idealTree ├── strip-bom@2.0.0
+49 silly idealTree ├── supports-color@3.2.3
+49 silly idealTree ├── tapable@0.2.6
+49 silly idealTree ├── timers-browserify@2.0.2
+49 silly idealTree ├── to-arraybuffer@1.0.1
+49 silly idealTree ├── tty-browserify@0.0.0
+49 silly idealTree ├─┬ uglify-js@2.7.5
+49 silly idealTree │ ├── async@0.2.10
+49 silly idealTree │ └── yargs@3.10.0
+49 silly idealTree ├── uglify-to-browserify@1.0.2
+49 silly idealTree ├─┬ url@0.11.0
+49 silly idealTree │ └── punycode@1.3.2
+49 silly idealTree ├── util-deprecate@1.0.2
+49 silly idealTree ├─┬ util@0.10.3
+49 silly idealTree │ └── inherits@2.0.1
+49 silly idealTree ├── validate-npm-package-license@3.0.1
+49 silly idealTree ├── vm-browserify@0.0.4
+49 silly idealTree ├── watchpack@1.2.0
+49 silly idealTree ├── webpack-sources@0.1.4
+49 silly idealTree ├── webpack@2.2.1
+49 silly idealTree ├── which-module@1.0.0
+49 silly idealTree ├── window-size@0.1.0
+49 silly idealTree ├── wordwrap@0.0.2
+49 silly idealTree ├── wrap-ansi@2.1.0
+49 silly idealTree ├── xtend@4.0.1
+49 silly idealTree ├── y18n@3.2.1
+49 silly idealTree ├─┬ yargs-parser@4.2.1
+49 silly idealTree │ └── camelcase@3.0.0
+49 silly idealTree └─┬ yargs@6.6.0
+49 silly idealTree   ├── camelcase@3.0.0
+49 silly idealTree   └── cliui@3.2.0
+50 silly generateActionsToTake Starting
+51 silly install generateActionsToTake
+52 silly generateActionsToTake Finishing
+53 silly diffTrees action count 0
+54 silly decomposeActions action count 0
+55 silly runTopLevelLifecycles Starting
+56 silly install runPreinstallTopLevelLifecycles
+57 silly preinstall webpack-analyse@1.0.0
+58 info lifecycle webpack-analyse@1.0.0~preinstall: webpack-analyse@1.0.0
+59 silly lifecycle webpack-analyse@1.0.0~preinstall: no script for preinstall, continuing
+60 silly executeActions Starting
+61 silly install executeActions
+62 silly doSerial global-install 0
+63 silly doParallel fetch 0
+64 verbose correctMkdir /home/aidan/.npm/_locks correctMkdir not in flight; initializing
+65 verbose lock using /home/aidan/.npm/_locks/staging-012347af802ff951.lock for /home/aidan/coding/study/web/webpack-analyse/node_modules/.staging
+66 silly doParallel extract 0
+67 silly doParallel preinstall 0
+68 silly doReverseSerial remove 0
+69 silly doSerial move 0
+70 silly doSerial finalize 0
+71 silly doSerial build 0
+72 silly doSerial global-link 0
+73 silly doParallel update-linked 0
+74 silly doSerial install 0
+75 silly doSerial postinstall 0
+76 verbose unlock done using /home/aidan/.npm/_locks/staging-012347af802ff951.lock for /home/aidan/coding/study/web/webpack-analyse/node_modules/.staging
+77 silly executeActions Finishing
+78 silly rollbackFailedOptional Starting
+79 silly rollbackFailedOptional Finishing
+80 silly install runPostinstallTopLevelLifecycles
+81 silly build webpack-analyse@1.0.0
+82 info linkStuff webpack-analyse@1.0.0
+83 silly linkStuff webpack-analyse@1.0.0 has /home/aidan/coding/study/web as its parent node_modules
+84 verbose linkBins webpack-analyse@1.0.0
+85 verbose linkMans webpack-analyse@1.0.0
+86 silly install webpack-analyse@1.0.0
+87 info lifecycle webpack-analyse@1.0.0~install: webpack-analyse@1.0.0
+88 silly lifecycle webpack-analyse@1.0.0~install: no script for install, continuing
+89 silly postinstall webpack-analyse@1.0.0
+90 info lifecycle webpack-analyse@1.0.0~postinstall: webpack-analyse@1.0.0
+91 silly lifecycle webpack-analyse@1.0.0~postinstall: no script for postinstall, continuing
+92 silly prepublish webpack-analyse@1.0.0
+93 info lifecycle webpack-analyse@1.0.0~prepublish: webpack-analyse@1.0.0
+94 silly lifecycle webpack-analyse@1.0.0~prepublish: no script for prepublish, continuing
+95 info lifecycle webpack-analyse@1.0.0~prepare: webpack-analyse@1.0.0
+96 silly lifecycle webpack-analyse@1.0.0~prepare: no script for prepare, continuing
+97 silly runTopLevelLifecycles Finishing
+98 silly install printInstalled
+99 warn optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules/chokidar/node_modules/fsevents):
+100 warn notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.0.17: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+101 verbose notsup SKIPPING OPTIONAL DEPENDENCY: Valid OS:    darwin
+101 verbose notsup SKIPPING OPTIONAL DEPENDENCY: Valid Arch:  any
+101 verbose notsup SKIPPING OPTIONAL DEPENDENCY: Actual OS:   linux
+101 verbose notsup SKIPPING OPTIONAL DEPENDENCY: Actual Arch: x64
+102 warn webpack-analyse@1.0.0 No repository field.
+103 verbose If you need help, you may report this error at:
+103 verbose     <https://github.com/npm/npm/issues>
+104 info build /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules/webpack-analyse
+105 info linkStuff webpack-analyse@1.0.0
+106 silly linkStuff webpack-analyse@1.0.0 has /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules as its parent node_modules
+107 silly linkStuff webpack-analyse@1.0.0 is part of a global install
+108 silly linkStuff webpack-analyse@1.0.0 is installed into a global node_modules
+109 silly linkStuff webpack-analyse@1.0.0 is installed into the top-level global node_modules
+110 verbose linkBins webpack-analyse@1.0.0
+111 verbose linkBins [ { test: './hello.js', hello: './hello.js' },
+111 verbose linkBins   '/home/aidan/.nvm/versions/node/v6.9.2/bin',
+111 verbose linkBins   true ]
+112 verbose linkMans webpack-analyse@1.0.0
+113 silly gentlyRm /home/aidan/.nvm/versions/node/v6.9.2/bin/test is being gently removed
+114 silly gentlyRm /home/aidan/.nvm/versions/node/v6.9.2/bin/hello is being gently removed
+115 silly isEverInside /home/aidan/.nvm/versions/node/v6.9.2/bin/test is not inside /home/aidan/coding/study/web/webpack-analyse
+116 silly isEverInside /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules/webpack-analyse/index.js is not inside /home/aidan/coding/study/web/webpack-analyse
+117 silly isEverInside /home/aidan/.nvm/versions/node/v6.9.2/bin/test is not inside /home/aidan/coding/study/web/webpack-analyse
+118 silly isEverInside /home/aidan/.nvm/versions/node/v6.9.2/lib/node_modules/webpack-analyse/index.js is not inside /home/aidan/coding/study/web/webpack-analyse
+119 silly gentlyRm parent.path = /home/aidan/coding/study/web/webpack-analyse
+120 silly gentlyRm parent.managed = /home/aidan/coding/study/web/webpack-analyse is in /home/aidan/coding/study/web/webpack-analyse
+121 silly gentlyRm target.path =  /home/aidan/.nvm/versions/node/v6.9.2/bin/test
+122 silly gentlyRm target.symlink = ../lib/node_modules/webpack-analyse/index.js
+123 silly gentlyRm target.managed = /home/aidan/.nvm/versions/node/v6.9.2/bin/test is in /home/aidan/.nvm/versions/node/v6.9.2
+124 silly gentlyRm target.inParent =  false
+125 warn gentlyRm not removing /home/aidan/.nvm/versions/node/v6.9.2/bin/test as it wasn't installed by /home/aidan/coding/study/web/webpack-analyse
+126 verbose stack Error: EEXIST: file already exists, symlink '../lib/node_modules/webpack-analyse/hello.js' -> '/home/aidan/.nvm/versions/node/v6.9.2/bin/test'
+126 verbose stack     at Error (native)
+127 verbose cwd /home/aidan/coding/study/web/webpack-analyse
+128 error Linux 4.4.0-59-generic
+129 error argv "/home/aidan/.nvm/versions/node/v6.9.2/bin/node" "/home/aidan/.nvm/versions/node/v6.9.2/bin/npm" "link"
+130 error node v6.9.2
+131 error npm  v4.1.1
+132 error path ../lib/node_modules/webpack-analyse/hello.js
+133 error code EEXIST
+134 error errno -17
+135 error syscall symlink
+136 error EEXIST: file already exists, symlink '../lib/node_modules/webpack-analyse/hello.js' -> '/home/aidan/.nvm/versions/node/v6.9.2/bin/test'
+137 error File exists: ../lib/node_modules/webpack-analyse/hello.js
+138 error Move it away, and try again.
+139 verbose exit [ -17, true ]

@@ -1,0 +1,17 @@
+{
+  "name": "yargs-learn",
+  "version": "1.0.0",
+  "description": "yargs demo",
+  "bin": {
+    "rmkdir": "./rmkdir.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aidan aidandai@126.com",
+  "license": "ISC",
+  "devDependencies": {
+    "yargs": "^6.6.0"
+  }
+}

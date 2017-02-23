@@ -1,0 +1,17 @@
+{
+  "name": "webpack-analyse",
+  "version": "1.0.0",
+  "description": "webpack source analyse",
+  "bin": {
+    "hello": "./hello.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aidan aidandai@126.com",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
