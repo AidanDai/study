@@ -1,0 +1,277 @@
+
+SegmentFault
+头条问答专栏职位活动App搜索
+输入关键字搜索
+消息私信
+home
+javascript
+node.js
+css3
+html5
+vue.js
+react.js
+react-native
+jquery
+sql
+mysql
+mongodb
+couchdb
+ubuntu
+java
+c++
+linux
+文
+nodejs中流(stream)的理解
+
+filesystem stream node.js  chshouyu 2014年05月25日发布
+推荐  9 推荐
+收藏  88 收藏，33.5k 浏览
+nodejs的fs模块并没有提供一个copy的方法，但我们可以很容易的实现一个，比如：
+
+var source = fs.readFileSync('/path/to/source', {encoding: 'utf8'});
+fs.writeFileSync('/path/to/dest', source);
+这种方式是把文件内容全部读入内存，然后再写入文件，对于小型的文本文件，这没有多大问题，比如grunt-file-copy就是这样实现的。但是对于体积较大的二进制文件，比如音频、视频文件，动辄几个GB大小，如果使用这种方法，很容易使内存“爆仓”。理想的方法应该是读一部分，写一部分，不管文件有多大，只要时间允许，总会处理完成，这里就需要用到流的概念。
+
+
+
+如上面高大上的图片所示，我们把文件比作装水的桶，而水就是文件里的内容，我们用一根管子(pipe)连接两个桶使得水从一个桶流入另一个桶，这样就慢慢的实现了大文件的复制过程。
+
+Stream在nodejs中是EventEmitter的实现，并且有多种实现形式，例如：
+
+http responses request
+fs read write streams
+zlib streams
+tcp sockets
+child process stdout and stderr
+上面的文件复制可以简单实现一下：
+
+var fs = require('fs');
+var readStream = fs.createReadStream('/path/to/source');
+var writeStream = fs.createWriteStream('/path/to/dest');
+
+readStream.on('data', function(chunk) { // 当有数据流出时，写入数据
+    writeStream.write(chunk);
+});
+
+readStream.on('end', function() { // 当没有数据时，关闭数据流
+    writeStream.end();
+});
+上面的写法有一些问题，如果写入的速度跟不上读取的速度，有可能导致数据丢失。正常的情况应该是，写完一段，再读取下一段，如果没有写完的话，就让读取流先暂停，等写完再继续，于是代码可以修改为：
+
+var fs = require('fs');
+var readStream = fs.createReadStream('/path/to/source');
+var writeStream = fs.createWriteStream('/path/to/dest');
+
+readStream.on('data', function(chunk) { // 当有数据流出时，写入数据
+    if (writeStream.write(chunk) === false) { // 如果没有写完，暂停读取流
+        readStream.pause();
+    }
+});
+
+writeStream.on('drain', function() { // 写完后，继续读取
+    readStream.resume();
+});
+
+readStream.on('end', function() { // 当没有数据时，关闭数据流
+    writeStream.end();
+});
+或者使用更直接的pipe
+
+// pipe自动调用了data,end等事件
+fs.createReadStream('/path/to/source').pipe(fs.createWriteStream('/path/to/dest'));
+下面是一个更加完整的复制文件的过程
+
+var fs = require('fs'),
+    path = require('path'),
+    out = process.stdout;
+
+var filePath = '/Users/chen/Movies/Game.of.Thrones.S04E07.1080p.HDTV.x264-BATV.mkv';
+
+var readStream = fs.createReadStream(filePath);
+var writeStream = fs.createWriteStream('file.mkv');
+
+var stat = fs.statSync(filePath);
+
+var totalSize = stat.size;
+var passedLength = 0;
+var lastSize = 0;
+var startTime = Date.now();
+
+readStream.on('data', function(chunk) {
+
+    passedLength += chunk.length;
+
+    if (writeStream.write(chunk) === false) {
+        readStream.pause();
+    }
+});
+
+readStream.on('end', function() {
+    writeStream.end();
+});
+
+writeStream.on('drain', function() {
+    readStream.resume();
+});
+
+setTimeout(function show() {
+    var percent = Math.ceil((passedLength / totalSize) * 100);
+    var size = Math.ceil(passedLength / 1000000);
+    var diff = size - lastSize;
+    lastSize = size;
+    out.clearLine();
+    out.cursorTo(0);
+    out.write('已完成' + size + 'MB, ' + percent + '%, 速度：' + diff * 2 + 'MB/s');
+    if (passedLength < totalSize) {
+        setTimeout(show, 500);
+    } else {
+        var endTime = Date.now();
+        console.log();
+        console.log('共用时：' + (endTime - startTime) / 1000 + '秒。');
+    }
+}, 500);
+
+可以把上面的代码保存为copy.js试验一下
+
+我们添加了一个递归的setTimeout（或者直接使用setInterval）来做一个旁观者，每500ms观察一次完成进度，并把已完成的大小、百分比和复制速度一并写到控制台上，当复制完成时，计算总的耗费时间，效果如图：
+
+
+
+我们复制了一集1080p的权利的游戏第四季第7集，大概3.78G大小，由于使用了SSD，可以看到速度还是非常不错的，哈哈哈~ 复制完成后，显示总花费时间
+
+
+
+结合nodejs的readline， process.argv等模块，我们可以添加覆盖提示、强制覆盖、动态指定文件路径等完整的复制方法，有兴趣的可以实现一下，实现完成，可以
+
+ln -s /path/to/copy.js /usr/local/bin/mycopy
+这样就可以使用自己写的mycopy命令替代系统的cp命令
+2014年05月25日发布 更多
+9 推荐 收藏
+你可能感兴趣的文章
+
+折腾了一下 Node.js 的 stream.Transform 3 收藏，2.6k 浏览
+thuck: 极其简单的一层协议 / Node.js Stream API 实现实战 2 收藏，3.1k 浏览
+Node 中的流（Stream） 50 收藏，12.9k 浏览
+15 条评论默认排序 
+
+stormslowly · 2014年06月03日
+bash的cp命令花了多久时间？
+ 赞 回复
+
+kazaff · 2014年06月03日
+不太明白为什么读取速度大于写入速度时会出现数据丢失，这里面到底发生了什么，有待挖掘啊~
+ 赞 回复
+
+Ran_Aizen · 2014年08月31日
+因为缓冲空间有限..
+ 赞 回复
+
+kazaff · 2014年09月01日
+如果是写入速度大于读取速度，导致缓冲区存满溢出，引起的数据丢失我可以理解，但反过来的话，我觉得有点匪夷所思啊~
+ 赞 回复
+
+Ran_Aizen · 2014年09月01日
+其实他说的就是这个意思，他所说的读和写应该是针对磁盘文件而言的：读是指从文件读数据到内存，写是指将内存数据写到文件。
+ 赞 回复
+
+维尼Bernie · 2014年12月17日
+是不是意味着readStream.pipe( writeStream ) 是异步的
+ 赞 回复
+
+hechangmin · 2014年12月26日
+本来就是异步的为什么要暂停读取的操作呢？
+
+我在本机不暂停，明显速度提升很多倍，也没遇到任何错误。
+ 赞 回复
+
+wangck1998 · 2015年07月27日
+在这篇文章中，有这样一句话：
+
+好吧，每一片数据只会冒出来一次，没人消费的话它就没了；OK 你想到了用 pause-stream「暂停」一下这个流，等下再消费？完了，数据会暂存在内存中，慢慢堆积，然后，你懂了。
+如果一直pause而不使用resume，内存会吃不消吗？
+ 赞 回复
+
+桔子先生 · 2015年08月03日
+用createReadStream读取的文件可以直接上传么 为什么我通过这个读取的压缩文件上传以后会变大
+ 赞 回复
+
+superwf · 2015年11月11日
+我看到了game of throne
+ 赞 回复
+
+xbgxwh · 2016年04月22日
+灵魂画师。。。。
+ 赞 回复
+
+Daniel_chan · 2016年06月16日
+这种方法在拷贝图片会不会导致乱码？
+ 赞 回复
+
+Seven_Cai · 2016年08月10日
+不会
+ 赞 回复
+
+叶叶yeah · 2016年11月02日
+复制的文件被放在了哪里呢？？
+ 赞 回复
+
+赵家兴 · 2016年12月02日
+因为它读的速度和写的速度不一样
+ 赞 回复
+
+
+文明社会，理性评论
+发布评论
+ 关注作者
+ chshouyu chshouyu
+548 声望
+发布于专栏
+昔我往矣，杨柳依依。
+
+4 人关注 关注专栏
+
+相关收藏夹
+
+
+gulp
+9 个条目 | 0 人关注
+分享扩散：
+新浪微博微信TwitterFacebook
+网站相关
+关于我们
+服务条款
+帮助中心
+声望与权限
+编辑器语法
+每周精选
+App 下载
+社区服务中心
+联系合作
+联系我们
+加入我们
+合作伙伴
+媒体报道
+建议反馈
+常用链接
+笔记插件: Chrome
+笔记插件: Firefox
+订阅：问答 / 文章
+文档镜像
+社区访谈
+D-DAY 技术沙龙
+黑客马拉松 Hackathon
+域名搜索注册
+周边店铺
+关注我们
+Github
+Twitter
+新浪微博
+团队日志
+产品技术日志
+社区运营日志
+市场运营日志
+内容许可
+除特别说明外，用户内容均采用 知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 进行许可
+本站由 又拍云 提供 CDN 存储服务
+Copyright © 2011-2017 SegmentFault. 当前呈现版本 17.02.05
+浙ICP备 15005796号-2   浙公网安备 33010602002000号

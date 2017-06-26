@@ -1,0 +1,11 @@
+{
+  "name": "file-explorer",
+  "version": "1.0.0",
+  "description": "a simple Node.js CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aidan aidandai@126.com",
+  "license": "ISC"
+}
