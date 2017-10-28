@@ -1,0 +1,11 @@
+{
+  "name": "manager",
+  "version": "1.0.0",
+  "description": "like pm2 for Node.js process manager",
+  "main": "index.js",
+  "scripts": {
+    "pm": "node ./index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
